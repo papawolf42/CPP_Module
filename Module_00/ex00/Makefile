@@ -6,13 +6,13 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 22:55:03 by gunkim            #+#    #+#              #
-#    Updated: 2022/01/12 23:38:38 by gunkim           ###   ########.fr        #
+#    Updated: 2022/01/13 04:46:57 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := megaphone
 
-CPP         := c++
+CPP         := clang++
 CPPFLAGS    := -Wall -Wextra -Werror
 
 RM          := rm -rf
