@@ -6,11 +6,11 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:27:51 by gunkim            #+#    #+#              #
-#    Updated: 2022/01/26 00:01:08 by gunkim           ###   ########.fr        #
+#    Updated: 2022/01/26 00:14:37 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := PhoneBook
+NAME        := BraiiiiiiinnnzzzZ
 
 CXX         := c++
 CXXFLAGS    := -Wall -Wextra -Werror -std=c++98
