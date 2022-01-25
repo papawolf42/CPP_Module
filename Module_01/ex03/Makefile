@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:27:51 by gunkim            #+#    #+#              #
-#    Updated: 2022/01/26 04:18:25 by gunkim           ###   ########.fr        #
+#    Updated: 2022/01/26 06:14:02 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,8 @@ test : $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o test.out
 
 clean :
-	$(RM) $(OBJS) 
-	
+	$(RM) $(OBJS)
+
 fclean : clean
 	$(RM) $(NAME)
 
