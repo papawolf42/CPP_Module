@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 22:25:32 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/24 20:50:51 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/25 01:24:45 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	PhoneBook::Search() {
 	for (size_t i = 0; i < idx_ && i < maxContact; i++) {
 		SearchDisplayRow(i);
 	}
+	SearchDisplayDivider();
 	SearchIndex();
 }
 
@@ -58,9 +59,6 @@ void	PhoneBook::SearchDisplayRow(size_t i) {
 	SearchDisplayColumn(contact_[i].GetLastName());
 	SearchDisplayColumn(contact_[i].GetNickName());
 	std::cout << "|" << std::endl;
-	if (((idx_ < maxContact) && (i == idx_ % maxContact - 1))
-		|| ((idx_ >= maxContact) && (i == maxContact - 1)))
-		SearchDisplayDivider();
 }
 
 void	PhoneBook::SearchDisplayColumn(std::string content) {
