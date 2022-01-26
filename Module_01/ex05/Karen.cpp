@@ -6,11 +6,22 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:54:35 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/27 01:18:40 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/27 03:30:06 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
+
+Karen::Karen() {
+	pf_[0] = &Karen::debug;
+	pf_[1] = &Karen::info;
+	pf_[2] = &Karen::warning;
+	pf_[3] = &Karen::error;
+	level_table_[0] = "DEBUG";
+	level_table_[1] = "INFO";
+	level_table_[2] = "WARNING";
+	level_table_[3] = "ERROR";
+}//c++ 11 이전에서는 배열을 초기화 리스트로 초기화 불가.
 
 void Karen::debug(void) {
 	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;
@@ -29,16 +40,9 @@ void Karen::error(void) {
 }
 
 void Karen::complain(std::string level) {
-	// switch (level) {
-	// 	case "DEBUG":
-	// 		*this.debug
-	// }
-	if (level == "DEBUG")
-		this->debug();
-	else if (level == "INFO")
-		this->info();
-	else if (level == "WARNING")
-		this->warning();
-	else if (level == "ERROR")
-		this->error();
+	for (size_t i = 0; i < 4; i++) {
+		if (level_table_[i] == level) {
+			(this->*pf_[i])();
+		}
+	}
 }
