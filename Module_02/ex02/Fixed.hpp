@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 00:35:55 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/28 01:38:55 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/28 04:33:35 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,15 @@ class Fixed {
 	Fixed operator*(const Fixed& ref) const;
 	Fixed operator/(const Fixed& ref) const;
 
-	// 전위 후위 증감 연산자 오버로딩
-	// 전위 후위 구분은 컴파일러에서 인자가 없는가, int인가로 구별함.
-	// 리턴값 : 전위는 리턴값이 이미 증가한 상태로 리턴
-	// 리턴값 : 후위는 
 	Fixed& operator++(void);
 	Fixed& operator--(void);
-	Fixed operator++(int);
-	Fixed operator--(int);
+	const Fixed operator++(int);
+	const Fixed operator--(int);
+
+	static Fixed& min(Fixed& ref1, Fixed& ref2);
+	static const Fixed& min(const Fixed& ref1, const Fixed& ref2);
+	static Fixed& max(Fixed& ref1, Fixed& ref2);
+	static const Fixed& max(const Fixed& ref1, const Fixed& ref2);
 };
 
 std::ostream& operator<<(std::ostream&out, const Fixed& ref);

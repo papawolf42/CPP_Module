@@ -6,11 +6,11 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:27:51 by gunkim            #+#    #+#              #
-#    Updated: 2022/01/28 00:33:35 by gunkim           ###   ########.fr        #
+#    Updated: 2022/01/28 03:28:17 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := Towards_a_more_useful_fixed_point_class
+NAME        := Now_we_are_talking
 
 CXX         := c++
 CXXFLAGS    := -Wall -Wextra -Werror -std=c++98
