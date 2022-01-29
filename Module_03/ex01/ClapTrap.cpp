@@ -6,13 +6,13 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 06:58:29 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/29 09:32:54 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/29 18:08:14 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name_(NULL), hit_point_(10), energy_point_(10), attack_damage_(0) {
+ClapTrap::ClapTrap() : name_("Unknown"), hit_point_(10), energy_point_(10), attack_damage_(0) {
 	std::cout << "<ClapTrap> Default constructor called" << std::endl;
 }
 

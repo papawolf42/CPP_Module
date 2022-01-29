@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 06:55:55 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/29 09:44:04 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/29 18:10:05 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	protected:
+	private:
 	std::string name_;
 	int hit_point_;
 	int energy_point_;
