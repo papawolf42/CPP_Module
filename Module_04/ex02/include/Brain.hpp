@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 11:42:20 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/30 16:20:01 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/30 16:48:02 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 
 class Brain {
-	protected:
+	private:
 	std::string idea_[SizeBrainArray];
 	unsigned int num_idea_;
 
