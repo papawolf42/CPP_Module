@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 06:48:39 by gunkim            #+#    #+#             */
-/*   Updated: 2022/01/31 14:23:32 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/01/31 17:13:57 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include "Form.hpp"
 
 int main() {
-	// try {
-	// 	Form("GuestBook", 150, 150);
-	// } catch (const std::exception& e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
 	try {
 		Form x_file("X-File", 0, 1);
 	} catch (const std::exception& e) {

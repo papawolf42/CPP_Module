@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 05:03:58 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/01 08:44:24 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/01 08:48:17 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Form::~Form() {}
 
 Form& Form::operator=(const Form& ref) {
 	signed_ = ref.signed_;
-	return (*this);//const attribute는 초기화 때 대입 가능해서, 대입할 수 없음.
+	return (*this);
 }
 
 std::string Form::getName() const {
@@ -44,11 +44,13 @@ int Form::getExecuteGrade() const {
 }
 
 void Form::beSigned(const Bureaucrat& signer) {
-	if (signer.getGrade() > sign_grade_) {
-		throw GradeTooLowException("NOT ENOUGH GRADE");
+	if (signer.getGrade() > getSignGrade()) {
+		throw GradeTooLowException("NOT ENOUGH GRADE TO SIGN");
 	}
 	signed_ = true;
 }
+// void Form::execute(const Bureaucrat& executor) const = 0
+// 순수 가상함수로 만들고, 각 derived form에서 overriding 해서 사용.
 
 Form::GradeTooHighException::GradeTooHighException()
 	: msg_("Grade is too high! the highest grade is 1") {}
@@ -63,6 +65,14 @@ Form::GradeTooLowException::GradeTooLowException()
 Form::GradeTooLowException::GradeTooLowException(const char *msg)
 	: msg_(msg) {}
 const char* Form::GradeTooLowException::what() const throw() {
+	return (msg_);
+}
+
+Form::FormNotSignedException::FormNotSignedException()
+	: msg_("NOT SIGNED YET") {}
+Form::FormNotSignedException::FormNotSignedException(const char *msg)
+	: msg_(msg) {}
+const char* Form::FormNotSignedException::what() const throw() {
 	return (msg_);
 }
 
