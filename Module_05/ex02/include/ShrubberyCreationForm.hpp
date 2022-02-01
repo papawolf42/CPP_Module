@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:19:07 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/01 08:38:27 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/01 10:51:30 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,12 @@
 # include "Form.hpp"
 # include <fstream>
 
-class Bureaucrat;
-
 class ShrubberyCreationForm : public Form {
 	private:
 		std::string target_;
 
 	public:
-		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm& ref);
 		~ShrubberyCreationForm();
 
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& ref);

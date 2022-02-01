@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 05:03:58 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/01 08:48:17 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/01 09:59:41 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ const char* Form::FormNotSignedException::what() const throw() {
 
 std::ostream& operator<<(std::ostream& out, const Form& ref) {
 	out
-	<< "----------------------------------------\n"
-	<< "| NAME            : " << std::left << std::setw(19) << (ref.getName().length() > 19 ? ref.getName().substr(0, 19) : ref.getName())  << "|\n"
-	<< "| SIGNATURE       : " << std::left << std::setw(19) << (ref.getSigned() == true ? "O" : "X") << "|\n"
-	<< "| GRADE TO SIGN   : " << std::left << std::setw(19) << ref.getSignGrade() << "|\n"
-	<< "| GRADE TO EXEC   : " << std::left << std::setw(19) << ref.getExecuteGrade() << "|\n"
-	<< "----------------------------------------\n";
+	<< "--------------------------------------------------\n"
+	<< "| NAME            : " << std::left << std::setw(29) << (ref.getName().length() > 29 ? ref.getName().substr(0, 29) : ref.getName())  << "|\n"
+	<< "| SIGNATURE       : " << std::left << std::setw(29) << (ref.getSigned() == true ? "O" : "X") << "|\n"
+	<< "| GRADE TO SIGN   : " << std::left << std::setw(29) << ref.getSignGrade() << "|\n"
+	<< "| GRADE TO EXEC   : " << std::left << std::setw(29) << ref.getExecuteGrade() << "|\n"
+	<< "--------------------------------------------------\n";
 	return (out);
 }

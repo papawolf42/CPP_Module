@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:27:51 by gunkim            #+#    #+#              #
-#    Updated: 2022/01/31 14:28:45 by gunkim           ###   ########.fr        #
+#    Updated: 2022/02/01 10:53:47 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ clean :
 	$(RM) $(OBJS) $(DIR_OBJ)
 	
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) dep
 
 re : fclean $(NAME)
 
@@ -56,6 +56,9 @@ re : fclean $(NAME)
 dep : $(DEPS)
 
 %.d : $(DIR_SRC)/%.cpp
-	$(CXX) $(INCLUDE) -MM $< | sed 's|^|$(DIR_OBJ)/|' | sed 's|$(DIR_OBJ)/  ||' >> depend_file
+	$(CXX) $(INCLUDE) -MM $< | sed 's|^|$(DIR_OBJ)/|' | sed 's|$(DIR_OBJ)/  ||' >> dep
 
 # DO NOT DELETE 
+obj/main.o: src/main.cpp include/Bureaucrat.hpp include/Form.hpp
+obj/Bureaucrat.o: src/Bureaucrat.cpp include/Bureaucrat.hpp include/Form.hpp
+obj/Form.o: src/Form.cpp include/Form.hpp include/Bureaucrat.hpp

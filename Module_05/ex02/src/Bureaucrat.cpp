@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 22:02:33 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/01 08:26:36 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/01 09:52:15 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void Bureaucrat::downGrade(int down) {
 void Bureaucrat::signForm(Form& form) {
 	try {
 		form.beSigned(*this);
-		std::cout << "<" << name_ << "> signs <" << form.getName() << ">\n";
+		std::cout << "<" << name_ << "> signs <" << form.getName() << ">" << std::endl;
 	} catch (const Form::GradeTooLowException& e) {
 		std::cerr << e.what() << std::endl;
 		std::cerr << "<" << name_ << "> cannot sign <" << form.getName() << ">\n"
