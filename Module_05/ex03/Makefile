@@ -6,11 +6,11 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:27:51 by gunkim            #+#    #+#              #
-#    Updated: 2022/02/01 10:57:21 by gunkim           ###   ########.fr        #
+#    Updated: 2022/02/01 17:07:19 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := 28B_not_28C
+NAME        := coffee_making
 
 CXX         := c++
 CXXFLAGS    := -Wall -Wextra -Werror -std=c++98
@@ -28,7 +28,8 @@ SRCS		:= main.cpp \
 	Form.cpp \
 	ShrubberyCreationForm.cpp \
 	RobotomyRequestForm.cpp \
-	PresidentialPardonForm.cpp
+	PresidentialPardonForm.cpp \
+	Intern.cpp
 
 OBJS		:= $(addprefix $(DIR_OBJ)/, $(SRCS:.cpp=.o))
 DEPS        := $(SRCS:.cpp=.d)
@@ -65,7 +66,7 @@ dep : $(DEPS)
 
 obj/main.o: src/main.cpp include/Bureaucrat.hpp include/Form.hpp \
 include/ShrubberyCreationForm.hpp include/RobotomyRequestForm.hpp \
-include/PresidentialPardonForm.hpp
+include/PresidentialPardonForm.hpp include/Intern.hpp
 obj/Bureaucrat.o: src/Bureaucrat.cpp include/Bureaucrat.hpp include/Form.hpp
 obj/Form.o: src/Form.cpp include/Form.hpp include/Bureaucrat.hpp
 obj/ShrubberyCreationForm.o: src/ShrubberyCreationForm.cpp \
@@ -77,3 +78,7 @@ include/Bureaucrat.hpp
 obj/PresidentialPardonForm.o: src/PresidentialPardonForm.cpp \
 include/PresidentialPardonForm.hpp include/Form.hpp \
 include/Bureaucrat.hpp
+obj/Intern.o: src/Intern.cpp include/Intern.hpp include/Form.hpp \
+include/Bureaucrat.hpp include/ShrubberyCreationForm.hpp \
+include/RobotomyRequestForm.hpp include/PresidentialPardonForm.hpp
+

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 06:48:39 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/01 15:56:25 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/01 17:32:04 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,61 +15,40 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main() {
 	try {
-		ShrubberyCreationForm hobby_life("Home");
-		Bureaucrat minister("wife", 150);
-
-		minister.signForm(hobby_life);
-		std::cout << std::endl;
-	
-		minister.upGrade(10);
-		minister.signForm(hobby_life);
-		std::cout << std::endl;
-	
-		minister.executeForm(hobby_life);
-		std::cout << std::endl;
-	
-		minister.upGrade(10);
-		minister.executeForm(hobby_life);
-		std::cout << std::endl;
-	
-		std::cout << hobby_life << std::endl;
-	} catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
-	}
-
-
-	try {
-		RobotomyRequestForm automail("Edward Elric");
+		Intern jang_grae;
+		Bureaucrat minister("wife", 1);
 		Bureaucrat king("Bradley", 1);
-
-		king.signForm(automail);
-		std::cout << std::endl;
-
-		king.executeForm(automail);
-		std::cout << std::endl;
-
-		std::cout << automail << std::endl;
-	} catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
-	}
-
-	try {
-		PresidentialPardonForm pardon_form("Park");
 		Bureaucrat president("Moon", 1);
 
-		president.signForm(pardon_form);
+		Form* fsc = jang_grae.makeForm("shrubbery creation", "home");
+		std::cout << *fsc << std::endl;
+		Form* frr = jang_grae.makeForm("robotomy request", "Edward Elric");
+		std::cout << *frr << std::endl;
+		Form* fpp = jang_grae.makeForm("presidential pardon", "Park");
+		std::cout << *fpp << std::endl;
+		// Form* Wrong = jang_grae.makeForm("resignation", "Mr. Oh");
+		// std::cout << *Wrong << std::endl;
 		std::cout << std::endl;
 
-		president.executeForm(pardon_form);
+		minister.signForm(*fsc);
+		king.signForm(*frr);
+		president.signForm(*fpp);
 		std::cout << std::endl;
-		
-		std::cout << pardon_form << std::endl;
+
+		minister.executeForm(*fsc);
+		king.executeForm(*frr);
+		president.executeForm(*fpp);
+
+		delete fsc;
+		delete frr;
+		delete fpp;
+
 	} catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
-
 	return (0);
 }
