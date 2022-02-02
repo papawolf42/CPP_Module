@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:36:14 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 20:19:29 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 20:54:48 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,10 @@ class Convertor {
 
 		Convertor& operator=(const Convertor& ref);
 
-		std::string		getLiteral() const;
-
 		void		toChar(void);
 		void		toInt(void);
 		void		toFloat(void);
 		void		toDouble(void);
-
-		void		printForm(void);
 
 		class GeneralException : public std::exception {
 			private:

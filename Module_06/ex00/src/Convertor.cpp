@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 05:03:58 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 20:47:23 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 20:54:38 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,17 @@ Convertor::Convertor(const std::string literal) : literal_(literal) {
 		}
 	}
 }
-Convertor::Convertor(const Convertor& ref) : literal_(ref.literal_), value_(ref.value_), type_(ref.type_) { }
+Convertor::Convertor(const Convertor& ref)
+	: literal_(ref.literal_), value_(ref.value_), type_(ref.type_), is_inf_(ref.is_inf_), is_nan_(ref.is_nan_) { }
 Convertor::~Convertor() { }
 
 Convertor& Convertor::operator=(const Convertor& ref) {
 	literal_ = ref.literal_;
 	value_ = ref.value_;
 	type_ = ref.type_;
+	is_nan_ = ref.is_nan_;
+	is_inf_ = ref.is_inf_;
 	return (*this);
-}
-
-std::string Convertor::getLiteral() const {
-	return (literal_);
 }
 
 void Convertor::toChar(void) {
