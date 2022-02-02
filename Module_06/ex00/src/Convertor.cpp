@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 05:03:58 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 21:15:10 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 23:26:36 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 Convertor::Convertor() { }
 Convertor::Convertor(const std::string literal) : literal_(literal) {
 	value_ = atof(literal_.c_str());
-	if (literal.length() == 1 && value_ <= 255) {
+	if (literal.length() == 1 && value_ <= 255
+		&& (literal[0] < '0' || '9' < literal[0])) {
 		type_ = typeChar;
 	} else if (value_ == 0 && literal_.find('0', 0) == std::string::npos) {
 		type_ = typeInvalid;
