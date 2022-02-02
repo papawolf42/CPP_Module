@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:59:12 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 22:11:32 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 23:29:32 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int main() {
 	std::cout << "address me      : " << &me << std::endl;
 	
 	uintptr_t addr = serialize(&me);
-	std::cout << std::hex << "address uintptr : " << addr << std::endl;
+	std::cout << std::hex;
+	std::cout << "address uintptr : " << addr << std::endl;
 
 	Data* ref = deserialize(addr);
 	std::cout << "address ref     : " << ref << std::endl;
 
+	std::cout << std::dec;
 	std::cout << "nickname  : " << ref->nickname << std::endl;
 	std::cout << "blackhole : " << ref->blackhole << std::endl;
 	std::cout << "wallet    : " << ref->wallet << std::endl;
