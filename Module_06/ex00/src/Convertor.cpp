@@ -6,12 +6,11 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 05:03:58 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 20:54:38 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 21:15:10 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convertor.hpp"
-
 
 Convertor::Convertor() { }
 Convertor::Convertor(const std::string literal) : literal_(literal) {
@@ -35,7 +34,7 @@ Convertor::Convertor(const std::string literal) : literal_(literal) {
 	}
 }
 Convertor::Convertor(const Convertor& ref)
-	: literal_(ref.literal_), value_(ref.value_), type_(ref.type_), is_inf_(ref.is_inf_), is_nan_(ref.is_nan_) { }
+	: literal_(ref.literal_), value_(ref.value_), type_(ref.type_), is_nan_(ref.is_nan_), is_inf_(ref.is_inf_) { }
 Convertor::~Convertor() { }
 
 Convertor& Convertor::operator=(const Convertor& ref) {

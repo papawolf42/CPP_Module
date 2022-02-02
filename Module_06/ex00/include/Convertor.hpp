@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:36:14 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 20:54:48 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 20:59:50 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <cctype>//isdigit, isalpha
 # include <cmath>//isnan, isinf
+# include <exception>
 
 class Convertor {
 	enum {

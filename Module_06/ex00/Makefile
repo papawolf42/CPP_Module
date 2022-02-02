@@ -6,14 +6,14 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:27:51 by gunkim            #+#    #+#              #
-#    Updated: 2022/02/02 20:48:48 by gunkim           ###   ########.fr        #
+#    Updated: 2022/02/02 22:18:25 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := convert
 
 CXX         := c++
-CXXFLAGS    := -g -Wall -Wextra -Werror -std=c++98
+CXXFLAGS    := -Wall -Wextra -Werror -std=c++98
 
 RM          := rm -rf
 

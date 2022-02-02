@@ -6,12 +6,11 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 18:33:14 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/02 20:48:03 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/02 20:59:39 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convertor.hpp"
-#include <iostream>
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
