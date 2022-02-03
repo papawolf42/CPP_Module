@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 09:47:50 by gunkim            #+#    #+#             */
-/*   Updated: 2022/02/03 09:54:05 by gunkim           ###   ########.fr       */
+/*   Updated: 2022/02/03 10:11:01 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void swap(T& a, T& b) {
 }
 
 template <typename T>
-T& min(T& a, T& b) {
+const T& min(const T& a, const T& b) {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
 template <typename T>
-T& max(T& a, T& b) {
+const T& max(const T& a, const T& b) {
 	if (a > b)
 		return (a);
 	return (b);
